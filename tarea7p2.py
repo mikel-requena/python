@@ -14,12 +14,17 @@ def mostrar():
 
 ventana = tk.Tk()
 ventana.title("Tarea7P2")
+ventana.geometry("500x350")
 
 etiqueta = tk.Label(ventana, text="Emplea Freamworks para el desarrollo de Software", font=("Arial", 14), fg="purple")
 etiqueta.pack()
+
+mensajeNombre = tk.Label(ventana, text="Escriba su nombre:").pack()
 entradaNombre = tk.Entry(ventana, width=25)
 entradaNombre.pack()
 
+mensajeSexo = tk.Label(ventana, text="Seleccione su sexo:")
+mensajeSexo.pack()
 generoSeleccion = tk.StringVar()
 hombre = tk.Radiobutton(ventana, text="Hombre", value="Hombre", variable=generoSeleccion)
 hombre.pack()
@@ -29,15 +34,17 @@ mujer.pack()
 deporte = tk.BooleanVar()
 videojuegos = tk.BooleanVar()
 musica = tk.BooleanVar()
- 
-casillaDeporte = tk.Checkbutton(ventana, text="Hacer deporte", variable=deporte)
+
+mensajePasatiempos = tk.Label(ventana, text="Selecciona tus pasatiempos:")
+mensajePasatiempos.pack()
+casillaDeporte = tk.Checkbutton(ventana, text="Hacer deporte", fg="blue", variable=deporte)
 casillaDeporte.pack()
-casillaVideojuegos = tk.Checkbutton(ventana, text="Jugar videojuegos", variable=videojuegos)
+casillaVideojuegos = tk.Checkbutton(ventana, text="Jugar videojuegos", fg="blue", variable=videojuegos)
 casillaVideojuegos.pack()
-casillaMusica = tk.Checkbutton(ventana, text="Escuchar música", variable=musica)
+casillaMusica = tk.Checkbutton(ventana, text="Escuchar música", fg="blue", variable=musica)
 casillaMusica.pack()
 
-boton = tk.Button(ventana, text="Mostrar datos", command=mostrar)
+boton = tk.Button(ventana, text="Mostrar datos", bg="green", command=mostrar)
 boton.pack()
     
 resultado = tk.Label(ventana, text="", font=("Arial", 12))
