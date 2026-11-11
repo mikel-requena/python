@@ -1,4 +1,4 @@
-import tkinter as tk
+import ttkbootstrap as ttkb
 
 def mostrar():
     nombre = entradaNombre.get()
@@ -12,42 +12,43 @@ def mostrar():
         pasatiempos.append("Escuchar música")
     resultado.config(text=f"Nombre: {nombre}\nGenero: {genero}\nPasatiempos: {pasatiempos}")
 
-ventana = tk.Tk()
+ventana = ttkb.Window(themename="superhero")
 ventana.title("Tarea7P2")
 ventana.geometry("500x350")
 
-etiqueta = tk.Label(ventana, text="Emplea Freamworks para el desarrollo de Software", font=("Arial", 14), fg="purple")
+etiqueta = ttkb.Label(ventana, text="Emplea Frameworks para el desarrollo de Software", font=("Arial", 14))
 etiqueta.pack()
 
-mensajeNombre = tk.Label(ventana, text="Escriba su nombre:").pack()
-entradaNombre = tk.Entry(ventana, width=25)
+mensajeNombre = ttkb.Label(ventana, text="Escriba su nombre:", bootstyle="info")
+mensajeNombre.pack()
+entradaNombre = ttkb.Entry(ventana, width=25)
 entradaNombre.pack()
 
-mensajeSexo = tk.Label(ventana, text="Seleccione su sexo:")
+mensajeSexo = ttkb.Label(ventana, text="Seleccione su sexo:", bootstyle="info")
 mensajeSexo.pack()
-generoSeleccion = tk.StringVar()
-hombre = tk.Radiobutton(ventana, text="Hombre", value="Hombre", variable=generoSeleccion)
+generoSeleccion = ttkb.StringVar()
+hombre = ttkb.Radiobutton(ventana, text="Hombre", value="Hombre", variable=generoSeleccion)
 hombre.pack()
-mujer = tk.Radiobutton(ventana, text="Mujer", value="Mujer", variable=generoSeleccion)
+mujer = ttkb.Radiobutton(ventana, text="Mujer", value="Mujer", variable=generoSeleccion)
 mujer.pack()
 
-deporte = tk.BooleanVar()
-videojuegos = tk.BooleanVar()
-musica = tk.BooleanVar()
+deporte = ttkb.BooleanVar()
+videojuegos = ttkb.BooleanVar()
+musica = ttkb.BooleanVar()
 
-mensajePasatiempos = tk.Label(ventana, text="Selecciona tus pasatiempos:")
+mensajePasatiempos = ttkb.Label(ventana, text="Selecciona tus pasatiempos:", bootstyle="info")
 mensajePasatiempos.pack()
-casillaDeporte = tk.Checkbutton(ventana, text="Hacer deporte", fg="blue", variable=deporte)
+casillaDeporte = ttkb.Checkbutton(ventana, text="Hacer deporte", variable=deporte)
 casillaDeporte.pack()
-casillaVideojuegos = tk.Checkbutton(ventana, text="Jugar videojuegos", fg="blue", variable=videojuegos)
+casillaVideojuegos = ttkb.Checkbutton(ventana, text="Jugar videojuegos", variable=videojuegos)
 casillaVideojuegos.pack()
-casillaMusica = tk.Checkbutton(ventana, text="Escuchar música", fg="blue", variable=musica)
+casillaMusica = ttkb.Checkbutton(ventana, text="Escuchar música", variable=musica)
 casillaMusica.pack()
 
-boton = tk.Button(ventana, text="Mostrar datos", bg="green", command=mostrar)
+boton = ttkb.Button(ventana, text="Mostrar datos", bootstyle="success", command=mostrar)
 boton.pack()
     
-resultado = tk.Label(ventana, text="", font=("Arial", 12))
+resultado = ttkb.Label(ventana, text="", font=("Arial", 12))
 resultado.pack()
 
 ventana.mainloop()
