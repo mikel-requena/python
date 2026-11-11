@@ -14,7 +14,7 @@ def mostrar():
 
 ventana = ttkb.Window(themename="superhero")
 ventana.title("Tarea7P2")
-ventana.geometry("500x350")
+ventana.geometry("550x400")
 
 etiqueta = ttkb.Label(ventana, text="Emplea Frameworks para el desarrollo de Software", font=("Arial", 14))
 etiqueta.pack()
