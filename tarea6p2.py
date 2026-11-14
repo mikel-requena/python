@@ -3,7 +3,7 @@ import tkinter as tk
 def sumar():
     numeroUno = int(primerNumero.get())
     numeroDos = int(segundoNumero.get())
-    resultado.config(text=f"SUMA\n{numeroUno} + {numeroDos} = {numeroUno + numeroDos}")
+    resultado.config(text=f"SUMA\n{primerNumero.get()} + {numeroDos} = {numeroUno + numeroDos}")
 
 def resta():
     numeroUno = int(primerNumero.get())
