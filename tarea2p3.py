@@ -1,6 +1,6 @@
 import ttkbootstrap as tb
 
-ventana = tb.Window()
+ventana = tb.Window(themename="superhero")
 
 datos = tb.Labelframe(ventana, padding=10)
 datos.pack(padx=20, pady=10, fill="x")
@@ -25,7 +25,7 @@ agregar = tb.Button(botones, text="Agregar", width=10, bootstyle="success")
 agregar.pack(side="left", padx=5)
 limpiar = tb.Button(botones, text="Limpiar", width=10, bootstyle="warning")
 limpiar.pack(side="left", padx=5)
-salir = tb.Button(ventana, text="Salir", width=10, bootstyle="danger")
-salir.pack(pady=10)
+salir = tb.Button(botones, text="Salir", width=10, bootstyle="danger")
+salir.pack(side="left", padx=5)
 
 ventana.mainloop()
